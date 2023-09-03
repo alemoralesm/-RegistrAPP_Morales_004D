@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" color="danger">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="titulo">Registro</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="contenido">
+      <form #registro="ngForm" (keyup.enter)="Registro">
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating" color="danger">Nombre: </ion-label>
+            <ion-input type="text" placeholder="Ingrese su nombre"
+                      name="nombre" [(ngModel)]="usuario.nombre"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating" color="danger">Apellido: </ion-label>
+            <ion-input type="text" placeholder="Ingrese su apellido"
+                      name="apellido" [(ngModel)]="usuario.apellido"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating" color="danger">Carrera: </ion-label>
+            <ion-input type="text" placeholder="Ingrese su carrera"
+                     name="carrera" [(ngModel)]="usuario.carrera"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating" color="danger">Email: </ion-label>
+            <ion-input type="email" placeholder="Ingrese su email"
+                      name="email" [(ngModel)]="usuario.email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating" color="danger">Edad: </ion-label>
+            <ion-input type="number" placeholder="Ingrese su edad"
+                      name="edad" [(ngModel)]="usuario.edad"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating" color="danger">Rut: </ion-label>
+            <ion-input type="number" placeholder="Digite su rut"
+                      name="rut" [(ngModel)]="usuario.rut"></ion-input>
+          </ion-item>
+        </ion-list>
+        <ion-button (click)="Registro()" expand="block" fill="solid" color="danger" shape="round">
+          Enviar
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

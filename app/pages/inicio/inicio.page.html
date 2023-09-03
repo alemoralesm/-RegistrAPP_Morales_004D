@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" color="danger">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-card class="container">
+      <img src="assets/logo.jpg.png" class="image">
+    </ion-card>
+    <ion-card-content class="contenido">
+      Si ya posee cuenta:
+      <br>
+      <a routerLink="/login">LOGIN</a>
+      <br>
+      Si no posee cuenta:
+      <br>
+      <a routerLink="/registro">REGISTRO</a>
+    </ion-card-content>
+</ion-content>

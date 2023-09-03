@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" color="danger">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Informacion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header>
+
+  </ion-header>
+  <ion-card class="contenido">
+    <img src="assets/codigoQR.webp" class="ion-padding">
+    <ion-card-header>
+      <ion-card-title class="titulo">Funcionalidades</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="text">
+      Facilitara el registro de asistencia en clases presenciales para docentes y estudiantes. Los docentes pueden generar códigos QR únicos para cada sesión de clase,
+      mientras que los estudiantes escanean estos códigos con sus dispositivos móviles para registrar su asistencia automáticamente.
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="contenido">
+    <img src="assets/asistencia.webp" class="ion-padding">
+    <ion-card-header>
+      <ion-card-title class="titulo">Objetivos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="text">
+    • Reducir los tiempos destinados para registrar la asistencia.
+    <br>
+    • Minimizar errores de registros por motivos ya mencionados.
+    <br>
+    • Instar a los alumnos a asistir presencialmente a clases.
+    <br>
+    • Mejorar el proceso de reportes de asistencias.
+    </ion-card-content>
+  </ion-card>
+</ion-content>

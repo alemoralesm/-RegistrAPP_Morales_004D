@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" color="danger">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="titulo" >Login</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="container" >
+      <form #login="ngForm" (keyup.enter)="Login()">
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating" color="danger">Usuario</ion-label>
+            <ion-input type="text" placeholder="Ingrese su usuario"
+                        name="user"[(ngModel)]="usuario.user" ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating" color="danger">Contraseña</ion-label>
+            <ion-input type="password" placeholder="Ingrese su contraseña"
+                        name="password" [(ngModel)]="usuario.password"></ion-input>
+          </ion-item>
+
+        </ion-list>
+        <ion-button (click)="Login()" expand="block" fill="solid" color="danger" shape="round">
+          Enviar
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
