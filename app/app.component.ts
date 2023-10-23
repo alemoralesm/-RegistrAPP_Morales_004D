@@ -34,6 +34,17 @@ export class AppComponent {
       name:'Informacion',
       icon:'information-outline',
       redirecTo:'/informacion'
+    },
+    {
+      name:'Registrodocente',
+      icon:'id-card-outline',
+      redirecTo:'/registrodocente'
+    },
+    {
+      name:'Anuncios',
+      icon:'clipboard-outline',
+      redirecTo:'/anuncios'
     }
+
   ]
 }

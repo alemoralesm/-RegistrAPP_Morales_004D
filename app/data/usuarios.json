@@ -1,0 +1,65 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "username": "alexis",
+      "password": "clave",
+      "asignatura1": "matematicas",
+      "asignatura2": "Aplicaciones moviles",
+      "role": "usuario",
+      "isactive": true
+    },
+    {
+      "id": 2,
+      "username": "morales",
+      "password": "duoc",
+      "asignatura1": "matematicas",
+      "asignatura2": "Aplicaciones moviles"
+    },
+    {
+      "id": 3,
+      "username": "eduardo",
+      "password": "duoc12",
+      "asignatura1": "Lenguaje",
+      "asignatura2": "Programacion"
+    },
+    {
+      "username": "valeria",
+      "password": "duoc",
+      "asignatura1": "Programacion",
+      "asignatura2": "web",
+      "role": "usuario",
+      "isactive": true,
+      "id": 4
+    },
+    {
+      "username": "maria",
+      "password": "casa",
+      "asignatura1": "app movil",
+      "asignatura2": "etica",
+      "role": "usuario",
+      "isactive": true,
+      "id": 5
+    }
+  ],
+  "anuncios": [
+    {
+      "id": 1,
+      "titulo": "Evaluacion 2",
+      "fecha": "2023-10-23",
+      "descripcion": "2da evaluacion de programacion app movil"
+    },
+    {
+      "id": 2,
+      "titulo": "Inicio evaluacion 3",
+      "fecha": "2023-10-30",
+      "descripcion": "Se comienza con los temas a tratar en la evaluacion 3"
+    },
+    {
+      "id": 3,
+      "titulo": "Evaluacion 3",
+      "fecha": "2023-11-27",
+      "descripcion": "3ra y ultima evaluacion antes del examen "
+    }
+  ]
+}

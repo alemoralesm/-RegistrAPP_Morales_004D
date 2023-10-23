@@ -12,7 +12,7 @@
 <ion-content [fullscreen]="true">
   <ion-card>
     <ion-card-header>
-      <ion-card-title class="titulo">Registro</ion-card-title>
+      <ion-card-title class="titulo">Registro Alumno</ion-card-title>
     </ion-card-header>
     <ion-card-content class="contenido">
       <form #registro="ngForm" (keyup.enter)="Registro">
@@ -28,19 +28,21 @@
                       name="apellido" [(ngModel)]="usuario.apellido"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label position="floating" color="danger">Carrera: </ion-label>
-            <ion-input type="text" placeholder="Ingrese su carrera"
-                     name="carrera" [(ngModel)]="usuario.carrera"></ion-input>
+            <ion-label position="floating" color="danger">Área:</ion-label>
+            <ion-select multiple="true" name="carrera" [(ngModel)]="usuario.carrera">
+              <ion-select-option value="Carrera1">Informatica y telecomunicaciones</ion-select-option>
+              <ion-select-option value="Carrera2">Construccion</ion-select-option>
+              <ion-select-option value="Carrera3">Ingeniería y Recursos Naturales</ion-select-option>
+              <ion-select-option value="Carrera2">Turismo y Hotelería</ion-select-option>
+              <ion-select-option value="Carrera2">Diseño</ion-select-option>
+              <ion-select-option value="Carrera2">Salud</ion-select-option>
+            </ion-select>
           </ion-item>
+
           <ion-item>
             <ion-label position="floating" color="danger">Email: </ion-label>
             <ion-input type="email" placeholder="Ingrese su email"
                       name="email" [(ngModel)]="usuario.email"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating" color="danger">Edad: </ion-label>
-            <ion-input type="number" placeholder="Ingrese su edad"
-                      name="edad" [(ngModel)]="usuario.edad"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label position="floating" color="danger">Rut: </ion-label>

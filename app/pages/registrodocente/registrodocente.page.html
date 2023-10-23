@@ -1,0 +1,75 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Registro Docente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card-header>
+    <ion-card-title class="titulo">Registro</ion-card-title>
+  </ion-card-header>
+
+  <form [formGroup]="registroForm">
+    <ion-item>
+      <ion-label position="floating">UserName</ion-label>
+      <ion-input type="text" formControlName="username" [(ngModel)]="newUsuario.username"></ion-input>
+    </ion-item>
+    <div *ngIf="registroForm.get('username')?.invalid && (registroForm.get('username')?.dirty || 
+    registroForm.get('username')?.touched)">
+      <div *ngIf="registroForm.get('username')?.hasError('required')">
+      *Username es obligatorio
+      </div>
+      <div *ngIf="registroForm.get('username')?.hasError('minlength')">
+      *Username debe tener mínimo 4 caracteres
+    </div>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" formControlName="password" [(ngModel)]="newUsuario.password"></ion-input>
+    </ion-item>
+    <div *ngIf="registroForm.get('password')?.invalid && (registroForm.get('password')?.dirty || 
+    registroForm.get('password')?.touched)">
+      <div *ngIf="registroForm.get('password')?.hasError('required')">
+      *Password es obligatoria
+      </div>
+      <div *ngIf="registroForm.get('password')?.hasError('minlength')">
+      *Password debe tener mínimo 4 caracteres
+      </div>
+      </div>
+
+    <ion-item>
+      <ion-label position="floating">Asignatura 1</ion-label>
+      <ion-input type="text" formControlName="asignatura1" [(ngModel)]="newUsuario.asignatura1"></ion-input>
+    </ion-item>
+    <div *ngIf="registroForm.get('asignatura1')?.invalid && (registroForm.get('asignatura1')?.dirty || 
+    registroForm.get('asignatura1')?.touched)">
+      <div *ngIf="registroForm.get('asignatura1')?.hasError('required')">
+        *Asignatura es requerida
+      </div>
+      </div>
+
+
+
+    <ion-item>
+      <ion-label position="floating">Asignatura 2</ion-label>
+      <ion-input type="text" formControlName="asignatura2" [(ngModel)]="newUsuario.asignatura2"></ion-input>
+    </ion-item>
+
+    <div *ngIf="registroForm.get('asignatura2')?.invalid && (registroForm.get('asignatura2')?.dirty || 
+    registroForm.get('asignatura2')?.touched)">
+      <div *ngIf="registroForm.get('asignatura2')?.hasError('required')">
+        *Asignatura es requerida
+      </div>
+      </div>
+ 
+
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="crearUsuario()" [disabled]="!registroForm.valid">
+          Registrar Usuario
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

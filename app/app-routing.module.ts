@@ -1,28 +1,43 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AutorizadoGuard } from './guards/autorizado.guard';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'inicio',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
     path: 'inicio',
-    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
+    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule),
+    canActivate: [AutorizadoGuard]
+  },
+
+  {
+    path: 'registro',
+    loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
+    ,canActivate: [AutorizadoGuard]
+  },
+  {
+    path: 'informacion',
+    loadChildren: () => import('./pages/informacion/informacion.module').then( m => m.InformacionPageModule)
+    ,canActivate: [AutorizadoGuard]
   },
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'registro',
-    loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
+    path: 'registrodocente',
+    loadChildren: () => import('./pages/registrodocente/registrodocente.module').then( m => m.RegistrodocentePageModule)
   },
   {
-    path: 'informacion',
-    loadChildren: () => import('./pages/informacion/informacion.module').then( m => m.InformacionPageModule)
+    path: 'anuncios',
+    loadChildren: () => import('./pages/anuncios/anuncios.module').then( m => m.AnunciosPageModule)
   },
+
+
 ];
 
 @NgModule({

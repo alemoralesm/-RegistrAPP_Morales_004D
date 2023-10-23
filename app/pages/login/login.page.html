@@ -1,39 +1,58 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button (click)="mostrarMenu()" color="danger">
-        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title class="titulo" >Login</ion-card-title>
-    </ion-card-header>
-    <ion-card-content class="container" >
-      <form #login="ngForm" (keyup.enter)="Login()">
-        <ion-list>
-          <ion-item>
-            <ion-label position="floating" color="danger">Usuario</ion-label>
-            <ion-input type="text" placeholder="Ingrese su usuario"
-                        name="user"[(ngModel)]="usuario.user" ></ion-input>
-          </ion-item>
+  <ion-card-header>
+    <ion-card-title class="titulo">Login</ion-card-title>
+  </ion-card-header>
+  
 
-          <ion-item>
-            <ion-label position="floating" color="danger">Contraseña</ion-label>
-            <ion-input type="password" placeholder="Ingrese su contraseña"
-                        name="password" [(ngModel)]="usuario.password"></ion-input>
-          </ion-item>
+  <form [formGroup]="loginForm">
+    <ion-item>
+      <ion-label position="floating">UserName</ion-label>
+      <ion-input type="text" formControlName="username"></ion-input>
+    </ion-item>
+    <div *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || 
+                loginForm.get('username')?.touched)">
+      <div *ngIf="loginForm.get('username')?.hasError('required')">
+        *Username es obligatorio
+      </div>
+      <div *ngIf="loginForm.get('username')?.hasError('minlength')">
+        *Username debe tener mínimo 4 caracteres
+      </div>
+    </div>
 
-        </ion-list>
-        <ion-button (click)="Login()" expand="block" fill="solid" color="danger" shape="round">
-          Enviar
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+
+    <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || 
+                loginForm.get('password')?.touched)">
+      <div *ngIf="loginForm.get('password')?.hasError('required')">
+        *Password es obligatoria
+      </div>
+      <div *ngIf="loginForm.get('password')?.hasError('minlength')">
+        *Password debe tener mínimo 4 caracteres
+      </div>
+    </div>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-button (click)="login()" [disabled]="!loginForm.valid" expand="block"  shape="round">
+          Login
         </ion-button>
-      </form>
+      </ion-col>
+    </ion-row>
+    <ion-card-content class="contenido">
+      <br>
+      Si no posee cuenta:
+      <br>
+      <a routerLink="/registrodocente">REGISTRO</a>
     </ion-card-content>
-  </ion-card>
+
+  </form>
 </ion-content>
